@@ -39,6 +39,13 @@ public class ImageCreatorImpl implements ImageCreator {
     this.s3Service = s3Service;
   }
 
+  /**
+   * Creates an image file and uploads is to S3.
+   * @param asset
+   * @param userId
+   * @return Image object with the image dimensions and URL to S3.
+   * @throws IOException
+   */
   @Override
   public Image renderFrom(Asset asset, String userId)
       throws IOException {
@@ -59,6 +66,13 @@ public class ImageCreatorImpl implements ImageCreator {
         .build();
   }
 
+  /**
+   * Applies the asset to the template, to get an html string.
+   * It then saves the string to a file.
+   * @param asset
+   * @return Html file
+   * @throws IOException
+   */
   private File createHtmlFileFrom(Asset asset)
       throws IOException {
 
@@ -86,6 +100,11 @@ public class ImageCreatorImpl implements ImageCreator {
     return file;
   }
 
+  /**
+   * Runs a CLI to render an image from an html file.
+   * @param file Html file to be rendered.
+   * @return Rendered image file.
+   */
   private File renderImage(File file) {
 
     String destinationUrl = UUID.randomUUID().toString() + ".png";
@@ -110,6 +129,11 @@ public class ImageCreatorImpl implements ImageCreator {
     ImageIO.write(bufferedImage, "png", image);
   }
 
+  /**
+   * An algorithm to remove all transparent pixels.
+   * @param image
+   * @return A BufferedImage object to be written to a file.
+   */
   private BufferedImage removeTransparentPixels(BufferedImage image) {
 
     WritableRaster raster = image.getAlphaRaster();
@@ -165,6 +189,11 @@ public class ImageCreatorImpl implements ImageCreator {
     return image.getSubimage(left, top, right - left + 1, bottom - top + 1);
   }
 
+  /**
+   * Calculates the image dimensions.
+   * @param file
+   * @return The width and height of the image
+   */
   private ImageDimensions getImageDimensions(File file) {
 
     BufferedImage bufferedImage = null;

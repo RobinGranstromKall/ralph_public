@@ -31,6 +31,13 @@ public class TextToSpeechServiceImpl implements TextToSpeechService {
         "Password");
   }
 
+  /**
+   * Creates an input stream from IBM Watson to be saved to a file and uploaded to S3.
+   * @param text to translate to audio.
+   * @param userId to use as directory name in S3.
+   * @return Audio object with the URL to S3 and the duration of the audio file in seconds.
+   * @throws IOException
+   */
   @Override
   public Audio getTextToSpeechAudio(String text, String userId)
       throws IOException {
