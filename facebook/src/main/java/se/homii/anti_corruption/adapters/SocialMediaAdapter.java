@@ -19,6 +19,12 @@ public class SocialMediaAdapter implements SocialMediaGateway {
   private final FeedTranslator feedTranslator;
   private final AccessTokenStore accessTokenStore;
 
+  /**
+   * An adapter which enables to easier replace a social media platform with another.
+   * @param facebookApi Facebook Graph Api
+   * @param feedTranslator Used to translate a response back to a domain Feed
+   * @param accessTokenStore Used to store access tokens of users doing the test
+   */
   @Inject
   public SocialMediaAdapter(FacebookApi facebookApi,
                             FeedTranslator feedTranslator,

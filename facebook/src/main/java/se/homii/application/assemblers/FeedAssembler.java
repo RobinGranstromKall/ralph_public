@@ -26,6 +26,14 @@ public class FeedAssembler {
     this.socialMediaGateway = socialMediaGateway;
   }
 
+  /**
+   * The feed assembler is used to assemble an API feed from a domain feed.
+   *
+   * @param feed          a domain feed.
+   * @param currentUserId the user id of the owner of the feed.
+   * @param friendUserIds used ids of the top three friends
+   * @return an API feed.
+   */
   public Feed assembleFrom(se.homii.domain.entity.Feed feed,
                            String currentUserId,
                            List<String> friendUserIds) {
@@ -85,7 +93,7 @@ public class FeedAssembler {
     for (se.homii.domain.valueobject.Post post : posts) {
       if (assembledPosts.size() == MAX_POSTS_PER_FEED) break;
 
-      // If post doesn't have comments friends, or message is empty, skip it
+      // If a post doesn't have comments by friends, or message is empty, skip it
       if (!hasCommentFromAFriend(friends, post) || !isValidMessage(post.getMessage())) {
         continue;
       }

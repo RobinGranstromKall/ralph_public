@@ -4,9 +4,7 @@ import com.google.common.collect.ImmutableList;
 import lombok.extern.slf4j.Slf4j;
 import se.homii.anti_corruption.adapters.SocialMediaGateway;
 import se.homii.api.SocialMediaService;
-import se.homii.api.model.Comment;
 import se.homii.api.model.Feed;
-import se.homii.api.model.Post;
 import se.homii.application.assemblers.FeedAssembler;
 import se.homii.domain.entity.UserScore;
 import se.homii.domain.service.PointCalculator;
@@ -34,6 +32,14 @@ public class SocialMediaServiceImpl implements SocialMediaService {
     this.socialMediaGateway = socialMediaGateway;
   }
 
+  /**
+   * Generates an API feed containing content from interactions between the one
+   * who is doing the test and its top three friends.
+   *
+   * @param currentUserId The user id of the one doing the test
+   * @param accessToken   An token which is used to send requests to a Social Media platform
+   * @return an Api feed
+   */
   @Override
   public Feed getFeedWithTopThreeFriends(String currentUserId, String accessToken) {
 
@@ -48,25 +54,6 @@ public class SocialMediaServiceImpl implements SocialMediaService {
     topThreeUserScores.forEach(
         userScore -> topThreeFriendsIds.add(userScore.getUserId()));
 
-    Feed assembledFeed = feedAssembler.assembleFrom(feed, currentUserId,
-        topThreeFriendsIds);
-
-    countChars(assembledFeed);
-
-    return assembledFeed;
-  }
-
-  private void countChars(Feed assembledFeed) {
-
-    int chars = 0;
-
-    for (Post post : assembledFeed.getPosts()) {
-      chars += post.getText().length();
-      for (Comment comment : post.getComments()) {
-        chars += comment.getText().length();
-      }
-    }
-
-    System.out.println("TOTAL CHARS: " + chars);
+    return feedAssembler.assembleFrom(feed, currentUserId, topThreeFriendsIds);
   }
 }
