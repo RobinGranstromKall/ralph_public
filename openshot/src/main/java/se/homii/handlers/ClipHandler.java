@@ -27,12 +27,6 @@ public class ClipHandler {
   @Inject
   private Animations animations;
 
-  /***
-   * This makes video
-   * @param asset
-   * @return Video
-   * @throws JsonProcessingException
-   */
   public Double addAssetToClips(Asset asset)
       throws JsonProcessingException {
 

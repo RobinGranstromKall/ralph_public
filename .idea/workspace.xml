@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="279ce839-d923-48a1-a7e0-6016c0b477ae" name="Default" comment="" />
+    <list default="true" id="279ce839-d923-48a1-a7e0-6016c0b477ae" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/src/main/java/se/homii/handlers/ClipHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/openshot/src/main/java/se/homii/handlers/ClipHandler.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/application/target/" />
     <ignored path="$PROJECT_DIR$/watson/target/" />
     <ignored path="$PROJECT_DIR$/bootstrap/target/" />
@@ -21,38 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GoogleGuiceModule.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/google/src/main/java/se/homii/google/GoogleGuiceModule.java">
+      <file leaf-file-name="ClipHandler.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/handlers/ClipHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TranslateServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/google/src/main/java/se/homii/google/TranslateServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImageCreatorImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/image/src/main/java/se/homii/image/ImageCreatorImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1661">
-              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/ClientHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1005">
-              <caret line="79" column="47" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
+            <state relative-caret-position="165">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
@@ -66,38 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClipHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/handlers/ClipHandler.java">
+      <file leaf-file-name="ClientHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/ClientHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/handlers/ProjectHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="52" column="42" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextToSpeechServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/watson/src/main/java/se/homii/texttospeech/TextToSpeechServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-227">
-              <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WatsonGuiceModule.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/watson/src/main/java/se/homii/texttospeech/WatsonGuiceModule.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="748">
+              <caret line="92" column="29" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -105,22 +55,57 @@
       <file leaf-file-name="VideoEditServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/VideoEditServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-677">
+            <state relative-caret-position="75">
               <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebhookResource.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/WebhookResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProjectHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/handlers/ProjectHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FeedTranslator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/facebook/src/main/java/se/homii/anti_corruption/translators/FeedTranslator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/aws/src/main/java/se/homii/S3ServiceImpl.java" />
         <option value="$PROJECT_DIR$/bootstrap/src/main/java/se/homii/RalphApplication.java" />
-        <option value="$PROJECT_DIR$/openshot/src/main/java/se/homii/ClientHelper.java" />
-        <option value="$PROJECT_DIR$/openshot/src/main/java/se/homii/handlers/ProjectHandler.java" />
         <option value="$PROJECT_DIR$/watson/src/main/java/se/homii/texttospeech/TextToSpeechServiceImpl.java" />
+        <option value="$PROJECT_DIR$/openshot/src/main/java/se/homii/handlers/ProjectHandler.java" />
+        <option value="$PROJECT_DIR$/openshot/src/main/java/se/homii/ClientHelper.java" />
+        <option value="$PROJECT_DIR$/openshot/src/main/java/se/homii/WebhookResource.java" />
+        <option value="$PROJECT_DIR$/openshot/src/main/java/se/homii/handlers/ClipHandler.java" />
       </list>
     </option>
   </component>
@@ -138,6 +123,7 @@
     <option name="width" value="1920" />
     <option name="height" value="1102" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -574,72 +560,70 @@
             <path>
               <item name="ralph_public-git" type="b2602c69:ProjectViewProjectNode" />
               <item name="ralph_public-git" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="se" type="462c0819:PsiDirectoryNode" />
-              <item name="homii" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
+              <item name="openshot" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ralph_public-git" type="b2602c69:ProjectViewProjectNode" />
               <item name="ralph_public-git" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
+              <item name="openshot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ralph_public-git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ralph_public-git" type="462c0819:PsiDirectoryNode" />
+              <item name="openshot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ralph_public-git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ralph_public-git" type="462c0819:PsiDirectoryNode" />
+              <item name="openshot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ralph_public-git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ralph_public-git" type="462c0819:PsiDirectoryNode" />
+              <item name="openshot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="se" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ralph_public-git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ralph_public-git" type="462c0819:PsiDirectoryNode" />
+              <item name="openshot" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="se" type="462c0819:PsiDirectoryNode" />
               <item name="homii" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ralph_public-git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ralph_public-git" type="462c0819:PsiDirectoryNode" />
+              <item name="openshot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="se" type="462c0819:PsiDirectoryNode" />
+              <item name="homii" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ralph_public-git" type="b2602c69:ProjectViewProjectNode" />
               <item name="ralph_public-git" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
+              <item name="openshot" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="se" type="462c0819:PsiDirectoryNode" />
               <item name="homii" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ralph_public-git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ralph_public-git" type="462c0819:PsiDirectoryNode" />
-              <item name="openshot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ralph_public-git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ralph_public-git" type="462c0819:PsiDirectoryNode" />
-              <item name="openshot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ralph_public-git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ralph_public-git" type="462c0819:PsiDirectoryNode" />
-              <item name="openshot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ralph_public-git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ralph_public-git" type="462c0819:PsiDirectoryNode" />
-              <item name="openshot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ralph_public-git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ralph_public-git" type="462c0819:PsiDirectoryNode" />
-              <item name="openshot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="se" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ralph_public-git" type="b2602c69:ProjectViewProjectNode" />
@@ -650,6 +634,8 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="se" type="462c0819:PsiDirectoryNode" />
               <item name="homii" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="query" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ralph_public-git" type="b2602c69:ProjectViewProjectNode" />
@@ -742,17 +728,6 @@
               <item name="se" type="462c0819:PsiDirectoryNode" />
               <item name="homii" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ralph_public-git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ralph_public-git" type="462c0819:PsiDirectoryNode" />
-              <item name="watson" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="se" type="462c0819:PsiDirectoryNode" />
-              <item name="homii" type="462c0819:PsiDirectoryNode" />
-              <item name="texttospeech" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -809,12 +784,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525851216354</updated>
-      <workItem from="1525851217695" duration="364000" />
+      <workItem from="1525851217695" duration="2888000" />
     </task>
+    <task id="LOCAL-00001" summary="Comment openshot">
+      <created>1525853624864</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1525853624864</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="364000" />
+    <option name="totallyTimeSpent" value="2888000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -826,7 +809,7 @@
       <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" visible="true" weight="0.32935324" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Designer" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973376" />
@@ -846,8 +829,38 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Comment openshot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comment openshot" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/application/src/main/java/se/homii/api/RenderResult.java">
@@ -948,13 +961,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/facebook/src/main/java/se/homii/anti_corruption/translators/FeedTranslator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/facebook/src/main/java/se/homii/api/model/Comment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1025,17 +1031,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/VideoEditServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/watson/src/main/java/se/homii/texttospeech/TextToSpeechServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-677">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="-227">
+          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/ClientHelper.java">
+    <entry file="file://$PROJECT_DIR$/watson/src/main/java/se/homii/texttospeech/WatsonGuiceModule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="79" column="47" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
+        <state relative-caret-position="195">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/api/data/Asset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/api/data/Audio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/api/data/Comment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/api/data/Image.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/api/data/Post.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/facebook/src/main/java/se/homii/anti_corruption/translators/FeedTranslator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/handlers/ProjectHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/WebhookResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1046,31 +1111,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/VideoEditServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/ClientHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="92" column="29" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/handlers/ClipHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/handlers/ProjectHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="52" column="42" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/watson/src/main/java/se/homii/texttospeech/TextToSpeechServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-227">
-          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/watson/src/main/java/se/homii/texttospeech/WatsonGuiceModule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="165">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
