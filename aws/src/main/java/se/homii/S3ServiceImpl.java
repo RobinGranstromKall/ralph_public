@@ -37,6 +37,13 @@ public class S3ServiceImpl implements S3Service {
         .build();
   }
 
+  /**
+   * Uploads a file to a directory with the user id as identifier.
+   * If the directory is not yet created, a directory is created.
+   * @param userId to name the directory.
+   * @param file to place in the directory.
+   * @return String representation of the URL to the file located on S3.
+   */
   @Override
   public String uploadFileForUser(String userId, File file) {
 
@@ -51,6 +58,10 @@ public class S3ServiceImpl implements S3Service {
     return String.format("http://s3-eu-west-1.amazonaws.com/homii-ralph/%s/%s", userId, file.getName());
   }
 
+  /**
+   * Removes all files located in the directory with user id as identifier.
+   * @param userId the identifier for the directory.
+   */
   @Override
   public void deleteFilesForUser(String userId) {
 
