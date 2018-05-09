@@ -1,7 +1,7 @@
-package se.homii.texttospeech.api;
+package se.homii;
 
-import se.homii.texttospeech.api.model.Audio;
-import se.homii.texttospeech.exceptions.TextToSpeechException;
+import se.homii.exceptions.TextToSpeechException;
+import se.homii.model.Audio;
 
 import java.io.IOException;
 

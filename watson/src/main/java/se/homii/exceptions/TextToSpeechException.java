@@ -1,4 +1,4 @@
-package se.homii.texttospeech.exceptions;
+package se.homii.exceptions;
 
 public class TextToSpeechException extends Exception {
 

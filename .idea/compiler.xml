@@ -17,5 +17,17 @@
         <module name="watson" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="application" target="1.8" />
+      <module name="aws" target="1.8" />
+      <module name="bootstrap" target="1.8" />
+      <module name="facebook" target="1.8" />
+      <module name="google" target="1.8" />
+      <module name="image" target="1.8" />
+      <module name="openshot" target="1.8" />
+      <module name="ralph" target="1.8" />
+      <module name="rest" target="1.8" />
+      <module name="watson" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

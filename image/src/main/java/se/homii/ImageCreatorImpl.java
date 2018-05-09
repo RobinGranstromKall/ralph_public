@@ -1,15 +1,14 @@
-package se.homii.image;
+package se.homii;
 
 import com.github.jknack.handlebars.Handlebars;
 import com.github.jknack.handlebars.Template;
-import se.homii.S3ServiceImpl;
+import se.homii.api.ImageCreator;
 import se.homii.api.S3Service;
-import se.homii.image.api.ImageCreator;
-import se.homii.image.api.models.Asset;
-import se.homii.image.api.models.CommentAsset;
-import se.homii.image.api.models.PostAsset;
-import se.homii.image.model.ImageDimensions;
-import se.homii.image.model.Image;
+import se.homii.api.models.Asset;
+import se.homii.api.models.CommentAsset;
+import se.homii.api.models.PostAsset;
+import se.homii.model.Image;
+import se.homii.model.ImageDimensions;
 
 import javax.imageio.ImageIO;
 import javax.inject.Inject;
@@ -19,7 +18,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 public class ImageCreatorImpl implements ImageCreator {
@@ -32,32 +31,12 @@ public class ImageCreatorImpl implements ImageCreator {
   public ImageCreatorImpl(S3Service s3Service)
       throws IOException {
 
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM d 'at' h:m a");
     Handlebars handlebars = new Handlebars();
+    handlebars.registerHelpers(formatter);
     this.postTemplate = handlebars.compile("handlebars/facebook-post.template");
     this.commentTemplate = handlebars.compile("handlebars/facebook-comment.template");
     this.s3Service = s3Service;
-  }
-
-  public static void main(String[] args)
-      throws IOException {
-
-    ImageCreatorImpl imageCreator = new ImageCreatorImpl(new S3ServiceImpl());
-
-    PostAsset post = PostAsset.builder()
-        .text("Hej hej, det har ar en text post")
-        .profilePictureUrl("url")
-        .fullName("Markus Averheim")
-        .postedTimestamp(
-            LocalDateTime.now())
-        .build();
-
-    CommentAsset comment = CommentAsset.builder()
-        .text("Hej hej, det har ar en text post")
-        .profilePictureUrl("url")
-        .fullName("Markus Averheim")
-        .build();
-
-    imageCreator.renderFrom(post, "123");
   }
 
   @Override
@@ -70,15 +49,57 @@ public class ImageCreatorImpl implements ImageCreator {
     cropImage(image);
 
     ImageDimensions imageDimensions = getImageDimensions(image);
-    System.out.println("IMG DIMENSIONS: " + imageDimensions.toString());
 
-    //String s3Url = uploadToS3(userId, image);
-    //deleteLocalFiles(htmlFile, image);
+    String s3Url = s3Service.uploadFileForUser(userId, image);
+    deleteLocalFiles(htmlFile, image);
 
     return Image.builder()
-        //.filePath(s3Url)
+        .filePath(s3Url)
         .imageDimensions(imageDimensions)
         .build();
+  }
+
+  private File createHtmlFileFrom(Asset asset)
+      throws IOException {
+
+    String html = null;
+
+    if (asset instanceof PostAsset) {
+      html = postTemplate.apply(asset);
+    } else if (asset instanceof CommentAsset) {
+      html = commentTemplate.apply(asset);
+    }
+
+    return saveToFile(html);
+  }
+
+  private File saveToFile(String html)
+      throws FileNotFoundException {
+
+    File file = new File(UUID.randomUUID().toString() + ".html");
+
+    PrintWriter printWriter = new PrintWriter(file);
+    printWriter.print(html);
+    printWriter.flush();
+    printWriter.close();
+
+    return file;
+  }
+
+  private File renderImage(File file) {
+
+    String destinationUrl = UUID.randomUUID().toString() + ".png";
+    String command = String.format("wkhtmltoimage --transparent --format png %s %s",
+        file.getAbsolutePath(), destinationUrl);
+
+    try {
+      Process process = Runtime.getRuntime().exec(command);
+      process.waitFor();
+    } catch (IOException | InterruptedException e) {
+      e.printStackTrace();
+    }
+
+    return new File(destinationUrl);
   }
 
   private void cropImage(File image)
@@ -144,33 +165,6 @@ public class ImageCreatorImpl implements ImageCreator {
     return image.getSubimage(left, top, right - left + 1, bottom - top + 1);
   }
 
-  private String uploadToS3(String userId, File image) {
-
-    s3Service.uploadFileForUser(userId, image);
-    return s3Service.resolveS3Url(userId, image.getName());
-  }
-
-  private void deleteLocalFiles(File... files) {
-
-    for (File file : files) {
-      file.delete();
-    }
-  }
-
-  private File createHtmlFileFrom(Asset asset)
-      throws IOException {
-
-    String html = null;
-
-    if (asset instanceof PostAsset) {
-      html = postTemplate.apply(asset);
-    } else if (asset instanceof CommentAsset) {
-      html = commentTemplate.apply(asset);
-    }
-
-    return saveToFile(html);
-  }
-
   private ImageDimensions getImageDimensions(File file) {
 
     BufferedImage bufferedImage = null;
@@ -189,34 +183,10 @@ public class ImageCreatorImpl implements ImageCreator {
         .build();
   }
 
-  private File renderImage(File file) {
+  private void deleteLocalFiles(File... files) {
 
-    String destinationUrl = UUID.randomUUID().toString() + ".png";
-
-    try {
-
-      Process process = Runtime.getRuntime()
-          .exec(
-              "wkhtmltoimage --transparent --format png " + file.getAbsolutePath() + " " + destinationUrl);
-      process.waitFor();
-
-    } catch (IOException | InterruptedException e) {
-      e.printStackTrace();
+    for (File file : files) {
+      file.delete();
     }
-
-    return new File(destinationUrl);
-  }
-
-  private File saveToFile(String html)
-      throws FileNotFoundException {
-
-    File file = new File(UUID.randomUUID().toString() + ".html");
-
-    PrintWriter printWriter = new PrintWriter(file);
-    printWriter.print(html);
-    printWriter.flush();
-    printWriter.close();
-
-    return file;
   }
 }

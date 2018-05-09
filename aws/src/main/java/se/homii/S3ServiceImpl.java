@@ -38,7 +38,7 @@ public class S3ServiceImpl implements S3Service {
   }
 
   @Override
-  public void uploadFileForUser(String userId, File file) {
+  public String uploadFileForUser(String userId, File file) {
 
     String bucket = BUCKET_NAME + "/" + userId;
 
@@ -47,6 +47,8 @@ public class S3ServiceImpl implements S3Service {
     } catch (AmazonClientException e) {
       e.printStackTrace();
     }
+
+    return String.format("http://s3-eu-west-1.amazonaws.com/homii-ralph/%s/%s", userId, file.getName());
   }
 
   @Override
@@ -68,11 +70,5 @@ public class S3ServiceImpl implements S3Service {
     } catch (MultiObjectDeleteException e) {
       e.printStackTrace();
     }
-  }
-
-  @Override
-  public String resolveS3Url(String userId, String fileName) {
-
-    return String.format("http://s3bucketlink", userId, fileName);
   }
 }
