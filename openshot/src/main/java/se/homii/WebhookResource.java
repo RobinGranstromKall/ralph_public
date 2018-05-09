@@ -13,6 +13,8 @@ public class WebhookResource {
   @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
   public void webhook(@BeanParam ExportResponse exportResponse) {
 
+    // Webhook that is to be called when the rendering of the video is done or has failed
+
     if(exportResponse.status.equals("completed")) {
       System.out.println(
           "Render of http://52.50.10.43/exports/" + exportResponse.id + " is completed");

@@ -26,6 +26,7 @@ public class ClientHelper {
   private String projectUrl;
 
   public ClientHelper() {
+    //Here i set up a jersey client with a logging feature for easier debugging when sending HTTP requests
 
     Logger logger = Logger.getLogger(getClass().getName());
 
@@ -51,6 +52,8 @@ public class ClientHelper {
   // FIXME so the client builds more dynamically
   public Invocation.Builder buildClientWithHeader(String endpoint, Integer clipId) {
 
+
+    // Here i make the client with the saved project url to match the current project
     String url;
 
     if (clipId == null) {
@@ -67,7 +70,9 @@ public class ClientHelper {
         .headers(getHeaders());
   }
 
-  public Invocation.Builder buildClientWithHeader() {
+  public Invocation.Builder buildProjectClientWithHeader() {
+
+    // Build the client for the instantiation of the project
 
     return client.target(String.format("%sprojects/", baseUrl))
         .request()
@@ -75,6 +80,8 @@ public class ClientHelper {
   }
 
   private MultivaluedMap<String, Object> getHeaders() {
+
+    // I have to manually set my headers in an array like this to be able to use multiple headers
 
     MultivaluedMap<String, Object> myHeaders = new MultivaluedHashMap<>();
     myHeaders.add("Authorization", "Token token");
@@ -85,7 +92,9 @@ public class ClientHelper {
 
   public Entity<Object> buildEntity(Object object) {
 
+    // A helper to build an entity out of an object
+
     return Entity.entity(object,
-        MediaType.APPLICATION_JSON_TYPE); //TODO perhaps not _TYPE??
+        MediaType.APPLICATION_JSON_TYPE);
   }
 }

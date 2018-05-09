@@ -27,6 +27,12 @@ public class ClipHandler {
   @Inject
   private Animations animations;
 
+  /***
+   * This makes video
+   * @param asset
+   * @return Video
+   * @throws JsonProcessingException
+   */
   public Double addAssetToClips(Asset asset)
       throws JsonProcessingException {
 
@@ -34,24 +40,30 @@ public class ClipHandler {
     Double clipEnd;
 
     for (Post post : asset.getPosts()) {
+      //Upload every post asset with animations
       List<Double> postWithCommentAudioLengths = getPostWithCommentAudioLength(post);
 
       Properties.PropertiesBuilder postPropertiesBuilder = Properties.builder();
 
+      // Since the api uses percentual units for position and scaling i use the resolution to get the percentual size
       Double postHeightPercent = calculatePercent(post.getImage().getHeight(), 720.0);
       Double postWidthPercent = calculatePercent(post.getImage().getWidth(), 1280.0);
 
+      // I use the time of the audio clips to make the transitions at the right time
       Double postAudioLength = post.getAudio().getFileLength();
       clipEnd = getTime(postWithCommentAudioLengths);
 
+      // Layer is the z-index for the clip so it determines witch should be on top
       Integer layer = post.getComments()
           .size() + 11; //HACK So i can have some room to add more assets below
 
+      // Here i do the animations and scaling
       postPropertiesBuilder.property(animations.centerY());
       postPropertiesBuilder.properties(
           animations.scale(postWidthPercent, postHeightPercent));
       postPropertiesBuilder.property(animations.transition(clipEnd));
 
+      // Here i upload the image files with the animations
       uploadFileWithClip(
           post.getImage().getFileUrl(),
           clipStart,
@@ -59,18 +71,21 @@ public class ClipHandler {
           layer,
           postPropertiesBuilder.build());
 
+      // Here i upload the audio files
       uploadFileWithClip(
           post.getAudio().getFileUrl(),
           clipStart + TRANSITION_TIME,
           postAudioLength,
           layer,
           null);
-
+      //Here i do some incrementation so that the timing of the animations is right.
       Double pastTime = postAudioLength + TRANSITION_TIME;
       layer--;
       Double distanceToAnimate = postHeightPercent;
       for (int j = 0; j < post.getComments().size(); j++) {
 
+
+        // This whole part is the same as the one above just with comments
         Comment comment = post.getComments().get(j);
         Audio commentAudio = comment.getAudio();
         Image commentImage = comment.getImage();
@@ -84,7 +99,7 @@ public class ClipHandler {
             getTimePassed(postWithCommentAudioLengths, j + 1) + clipStart;
 
         Properties.PropertiesBuilder commentPropertiesBuilder = Properties.builder();
-
+        // Comments have one more animations as of this point that's the moveY() it makes the comment fall down to a specific place at a specific time
         commentPropertiesBuilder.property(animations.moveY(distanceToAnimate, pastTime));
         commentPropertiesBuilder.properties(
             animations.scale(commentWidthPercent, commentHeightPercent));
@@ -118,6 +133,7 @@ public class ClipHandler {
   public void addBackground(String videoUrl, Double length)
       throws JsonProcessingException {
 
+    // Here i add the background clip that in the future will hold all the static animations.
     uploadFileWithClip(videoUrl, 0.0, length, 1, null);
 
   }
