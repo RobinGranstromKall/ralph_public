@@ -2,9 +2,157 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="279ce839-d923-48a1-a7e0-6016c0b477ae" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openshot/src/main/java/se/homii/handlers/ClipHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/openshot/src/main/java/se/homii/handlers/ClipHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/classes/se/homii/RalphGuiceModule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/classes/se/homii/RalphImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/classes/se/homii/api/Ralph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/classes/se/homii/api/RenderResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws/target/classes/se/homii/S3ServiceGuiceModule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws/target/classes/se/homii/S3ServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws/target/classes/se/homii/api/S3Service.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/target/bootstrap-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/target/classes/se/homii/BootstrapConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/target/classes/se/homii/BootstrapGuiceModule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/target/classes/se/homii/RalphApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/target/original-bootstrap-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/SocialMediaGuiceModule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/anti_corruption/adapters/SocialMediaAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/anti_corruption/adapters/SocialMediaGateway.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/anti_corruption/facades/AccessTokenStore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/anti_corruption/facades/FacebookApi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/anti_corruption/facades/FacebookApiImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/anti_corruption/facades/SimpleAccessTokenStore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/anti_corruption/translators/FeedTranslator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/api/SocialMediaService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/api/model/Comment$CommentBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/api/model/Comment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/api/model/Feed$FeedBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/api/model/Feed.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/api/model/Post$PostBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/api/model/Post.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/api/model/User$UserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/api/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/application/SocialMediaServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/application/assemblers/FeedAssembler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/entity/Feed$FeedBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/entity/Feed.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/entity/UserScore$UserScoreBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/entity/UserScore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/predicate/UserPredicate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/service/PointCalculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/valueobject/Comment$CommentBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/valueobject/Comment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/valueobject/Like$LikeBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/valueobject/Like.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/valueobject/MessageTag$MessageTagBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/valueobject/MessageTag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/valueobject/Point.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/valueobject/Post$PostBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/valueobject/Post.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/valueobject/Profile$ProfileBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/valueobject/Profile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/valueobject/WithTag$WithTagBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/se/homii/domain/valueobject/WithTag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google/target/classes/se/homii/google/GoogleGuiceModule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google/target/classes/se/homii/google/TranslateServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google/target/classes/se/homii/google/api/TranslateService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google/target/classes/se/homii/google/api/model/Translation$TranslationBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google/target/classes/se/homii/google/api/model/Translation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/target/classes/handlebars/comment.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/target/classes/handlebars/facebook-comment.template.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/target/classes/handlebars/facebook-post.template.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/target/classes/handlebars/like.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/target/classes/se/homii/image/ImageCreatorImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/target/classes/se/homii/image/ImageGuiceModule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/target/classes/se/homii/image/api/ImageCreator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/target/classes/se/homii/image/api/models/Asset.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/target/classes/se/homii/image/api/models/CommentAsset$CommentAssetBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/target/classes/se/homii/image/api/models/CommentAsset.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/target/classes/se/homii/image/api/models/PostAsset$PostAssetBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/target/classes/se/homii/image/api/models/PostAsset.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/target/classes/se/homii/image/model/Image$ImageBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/target/classes/se/homii/image/model/Image.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/target/classes/se/homii/image/model/ImageDimensions$ImageDimensionsBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/target/classes/se/homii/image/model/ImageDimensions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/TestyProject.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/christopher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/christopher.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/markus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/markus.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/robin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/robin.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/ClientHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/OpenshotGuiceModule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/VideoEditServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/WebhookResource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/api/data/Asset$AssetBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/api/data/Asset.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/api/data/Audio$AudioBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/api/data/Audio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/api/data/Comment$CommentBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/api/data/Comment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/api/data/Image$ImageBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/api/data/Image.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/api/data/Post$PostBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/api/data/Post.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/api/query/VideoEditService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/api/query/VideoEditWebhookService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/handlers/ClipHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/handlers/ProjectHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/KeyframeCurve.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/Animations.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/PropertiesSerializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/Alpha$AlphaBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/Alpha.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/Coordinates$CoordinatesBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/Coordinates.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/LocationX$LocationXBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/LocationX.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/LocationY$LocationYBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/LocationY.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/Point$PointBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/Point.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/Properties$PropertiesBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/Properties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/Property.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/Rotation$RotationBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/Rotation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/ScaleX$ScaleXBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/ScaleX.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/ScaleY$ScaleYBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/ScaleY.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/Time$TimeBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/Time.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/Volume$VolumeBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/animate/property/Volume.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/request/Clip$ClipBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/request/Clip.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/request/Export$ExportBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/request/Export.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/request/File$FileBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/request/File.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/request/Project$ProjectBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/request/Project.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/response/ClipResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/response/ExportResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/response/FileResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/classes/se/homii/models/response/ProjectResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/openshot-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openshot/target/original-openshot-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/watson/target/classes/se/homii/texttospeech/TextToSpeechServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/watson/target/classes/se/homii/texttospeech/WatsonGuiceModule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/watson/target/classes/se/homii/texttospeech/api/TextToSpeechService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/watson/target/classes/se/homii/texttospeech/api/model/Audio$AudioBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/watson/target/classes/se/homii/texttospeech/api/model/Audio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/watson/target/classes/se/homii/texttospeech/exceptions/TextToSpeechException.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/application/target/" />
     <ignored path="$PROJECT_DIR$/watson/target/" />
@@ -25,11 +173,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ClipHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClipHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/handlers/ClipHandler.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="45" column="56" selection-start-line="45" selection-start-column="56" selection-end-line="45" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dependency-reduced-pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/openshot/dependency-reduced-pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -106,6 +272,7 @@
         <option value="$PROJECT_DIR$/openshot/src/main/java/se/homii/ClientHelper.java" />
         <option value="$PROJECT_DIR$/openshot/src/main/java/se/homii/WebhookResource.java" />
         <option value="$PROJECT_DIR$/openshot/src/main/java/se/homii/handlers/ClipHandler.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -784,7 +951,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525851216354</updated>
-      <workItem from="1525851217695" duration="2888000" />
+      <workItem from="1525851217695" duration="3725000" />
     </task>
     <task id="LOCAL-00001" summary="Comment openshot">
       <created>1525853624864</created>
@@ -793,11 +960,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525853624864</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Comment openshot">
+      <created>1525854159946</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1525854159946</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2888000" />
+    <option name="totallyTimeSpent" value="3725000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -1127,8 +1301,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/openshot/src/main/java/se/homii/handlers/ClipHandler.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="45" column="56" selection-start-line="45" selection-start-column="56" selection-end-line="45" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openshot/dependency-reduced-pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
