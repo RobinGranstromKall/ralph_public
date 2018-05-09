@@ -27,8 +27,8 @@ public class TextToSpeechServiceImpl implements TextToSpeechService {
 
     this.s3Service = s3Service;
     this.textToSpeechService = new TextToSpeech(
-        "39bd4664-88ab-4798-817e-3977f2080741",
-        "V2wDBHIgyxKU");
+        "Username",
+        "Password");
   }
 
   @Override
