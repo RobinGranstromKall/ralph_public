@@ -1,7 +1,7 @@
-package se.homii.api;
+package se.homii.image.api;
 
-import se.homii.api.models.Asset;
-import se.homii.model.Image;
+import se.homii.image.api.models.Asset;
+import se.homii.image.model.Image;
 
 import java.io.IOException;
 

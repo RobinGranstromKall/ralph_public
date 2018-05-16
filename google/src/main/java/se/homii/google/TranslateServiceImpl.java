@@ -15,10 +15,6 @@ public class TranslateServiceImpl implements TranslateService {
   @Override
   public se.homii.google.api.model.Translation translate(String text) {
 
-    if(text == null) {
-      return buildTranslation("Empty bod");
-    }
-
     Translation translation = translate.translate(text,
         Translate.TranslateOption.targetLanguage("en"));
 
@@ -28,8 +24,7 @@ public class TranslateServiceImpl implements TranslateService {
   private se.homii.google.api.model.Translation buildTranslation(
       String translatedText) {
 
-    return se.homii.google.api.model.Translation
-        .builder()
+    return se.homii.google.api.model.Translation.builder()
         .text(translatedText)
         .build();
   }

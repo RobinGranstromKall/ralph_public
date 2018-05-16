@@ -16,8 +16,7 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
-import static se.homii.models.animate.Animations.PAUSE_TIME;
-import static se.homii.models.animate.Animations.TRANSITION_TIME;
+import static se.homii.models.animate.Animations.*;
 
 public class ClipHandler {
 
@@ -31,58 +30,54 @@ public class ClipHandler {
       throws JsonProcessingException {
 
     Double clipStart = 0.0;
-    Double clipEnd;
+    Double clipLength;
 
     for (Post post : asset.getPosts()) {
-      //Upload every post asset with animations
-      List<Double> postWithCommentAudioLengths = getPostWithCommentAudioLength(post);
 
-      Properties.PropertiesBuilder postPropertiesBuilder = Properties.builder();
+      //Upload every post asset with animations
+
+      Integer spotlightIndex = 1;
+      List<Double> postWithCommentAudioLengths = getPostWithCommentAudioLength(post);
 
       // Since the api uses percentual units for position and scaling i use the resolution to get the percentual size
       Double postHeightPercent = calculatePercent(post.getImage().getHeight(), 720.0);
       Double postWidthPercent = calculatePercent(post.getImage().getWidth(), 1280.0);
 
+
       // I use the time of the audio clips to make the transitions at the right time
       Double postAudioLength = post.getAudio().getFileLength();
-      clipEnd = getTime(postWithCommentAudioLengths);
+      clipLength = getTime(postWithCommentAudioLengths);
 
       // Layer is the z-index for the clip so it determines witch should be on top
       Integer layer = post.getComments()
           .size() + 11; //HACK So i can have some room to add more assets below
 
-      // Here i do the animations and scaling
-      postPropertiesBuilder.property(animations.centerY());
-      postPropertiesBuilder.properties(
-          animations.scale(postWidthPercent, postHeightPercent));
-      postPropertiesBuilder.property(animations.transition(clipEnd));
+      Properties postProperties = makePostProperties(postWidthPercent, postHeightPercent,
+          clipLength);
 
-      // Here i upload the image files with the animations
-      uploadFileWithClip(
-          post.getImage().getFileUrl(),
+      addPost(
+          post,
           clipStart,
-          clipEnd,
+          clipLength,
           layer,
-          postPropertiesBuilder.build());
+          postProperties
+      );
 
-      // Here i upload the audio files
-      uploadFileWithClip(
-          post.getAudio().getFileUrl(),
-          clipStart + TRANSITION_TIME,
+      addSpotlight(
+          clipStart,
           postAudioLength,
-          layer,
-          null);
-      //Here i do some incrementation so that the timing of the animations is right.
+          spotlightIndex,
+          clipStart,
+          clipLength
+      );
+
       Double pastTime = postAudioLength + TRANSITION_TIME;
       layer--;
+      spotlightIndex++;
       Double distanceToAnimate = postHeightPercent;
       for (int j = 0; j < post.getComments().size(); j++) {
 
-
-        // This whole part is the same as the one above just with comments
         Comment comment = post.getComments().get(j);
-        Audio commentAudio = comment.getAudio();
-        Image commentImage = comment.getImage();
 
         Double commentHeightPercent =
             calculatePercent(comment.getImage().getHeight(), 720.0);
@@ -92,29 +87,30 @@ public class ClipHandler {
         Double commentAudioStart =
             getTimePassed(postWithCommentAudioLengths, j + 1) + clipStart;
 
-        Properties.PropertiesBuilder commentPropertiesBuilder = Properties.builder();
-        // Comments have one more animations as of this point that's the moveY() it makes the comment fall down to a specific place at a specific time
-        commentPropertiesBuilder.property(animations.moveY(distanceToAnimate, pastTime));
-        commentPropertiesBuilder.properties(
-            animations.scale(commentWidthPercent, commentHeightPercent));
-        commentPropertiesBuilder.property(animations.commentTransition(clipEnd));
+        Properties commentProperties = makeCommentProperties(commentWidthPercent,
+            commentHeightPercent, clipLength, distanceToAnimate, pastTime);
 
-        uploadFileWithClip(
-            commentImage.getFileUrl(),
+        addComment(
+            comment,
             clipStart,
-            clipEnd,
-            layer,
-            commentPropertiesBuilder.build());
-
-        uploadFileWithClip(
-            commentAudio.getFileUrl(),
+            clipLength,
             commentAudioStart,
-            commentAudio.getFileLength(),
             layer,
-            null);
+            commentProperties
+        );
 
-        pastTime += commentAudio.getFileLength();
+        addSpotlight(
+            commentAudioStart,
+            comment.getAudio().getFileLength(),
+            spotlightIndex,
+            clipStart,
+            clipLength
+        );
+
+
+        pastTime += comment.getAudio().getFileLength();
         layer--;
+        spotlightIndex++;
         distanceToAnimate += commentHeightPercent;
 
       }
@@ -124,10 +120,124 @@ public class ClipHandler {
     return clipStart;
   }
 
-  public void addBackground(String videoUrl, Double length)
+  private void addPost(Post post, Double clipStart, Double clipLength, Integer layer,
+                       Properties properties)
       throws JsonProcessingException {
 
+    //Here i upload a comments audio and video clips
+    Double postAudioLength = post.getAudio().getFileLength();
+
+    uploadFileWithClip(
+        post.getImage().getFileUrl(),
+        clipStart,
+        clipLength,
+        layer,
+        properties);
+
+    uploadFileWithClip(
+        post.getAudio().getFileUrl(),
+        clipStart + TRANSITION_TIME,
+        postAudioLength,
+        layer,
+        null);
+  }
+
+  private Properties makePostProperties(Double postWidthPercent, Double postHeightPercent,
+                                        Double clipLength) {
+    // Here i assemble all the animations for each post clip
+    Properties.PropertiesBuilder postPropertiesBuilder = Properties.builder();
+
+    postPropertiesBuilder.property(animations.centerY());
+    postPropertiesBuilder.properties(
+        animations.scale(postWidthPercent, postHeightPercent));
+    postPropertiesBuilder.property(animations.transition(clipLength));
+
+    return postPropertiesBuilder.build();
+  }
+
+  private void addComment(Comment comment, Double clipStart, Double clipLength,
+                          Double commentAudioStart, Integer layer, Properties properties)
+      throws JsonProcessingException {
+
+    //Here i upload a comments audio and video clips
+    uploadFileWithClip(
+        comment.getImage().getFileUrl(),
+        clipStart,
+        clipLength,
+        layer,
+        properties);
+
+    uploadFileWithClip(
+        comment.getAudio().getFileUrl(),
+        commentAudioStart,
+        comment.getAudio().getFileLength(),
+        layer,
+        null);
+  }
+
+  private Properties makeCommentProperties(Double commentWidthPercent,
+                                           Double commentHeightPercent,
+                                           Double clipLength,
+                                           Double distanceToAnimate,
+                                           Double pastTime) {
+
+    // Here i assemble all the animations for each comment clip
+
+    Properties.PropertiesBuilder commentPropertiesBuilder = Properties.builder();
+
+    commentPropertiesBuilder.property(animations.moveY(distanceToAnimate, pastTime));
+    commentPropertiesBuilder.properties(
+        animations.scale(commentWidthPercent, commentHeightPercent));
+    commentPropertiesBuilder.property(animations.commentTransition(clipLength));
+
+    return commentPropertiesBuilder.build();
+  }
+
+  private void addSpotlight(Double start, Double length, int spot, Double clipStart,
+                            Double clipLength)
+      throws JsonProcessingException {
+
+    start = start - clipStart;
+
+    String spotUrl = "";
+    System.out.println(spot);
+    switch (spot) {
+      case 1:
+        spotUrl = "https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Decorative-Numbers/Gold_Number_Zero_PNG_Clipart_Image.png?m=1507172102";
+        break;
+      case 2:
+        spotUrl = "https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Decorative-Numbers/Gold_Number_One_PNG_Clipart_Image.png?m=1507172102";
+        break;
+      case 3:
+        spotUrl = "https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Decorative-Numbers/Gold_Number_Two_PNG_Clipart_Image.png?m=1507172102";
+        break;
+      case 4:
+        spotUrl = "https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Decorative-Numbers/Gold_Number_Three_PNG_Clipart_Image.png?m=1507172102";
+        break;
+    }
+    Properties properties = Properties.builder()
+        .property(animations.toggleAlpha(start, start + length))
+        .properties(animations.scale(0.5, 0.5)) // TODO remove, just for testing
+        .build();
+
+    Double clipEnd = clipStart + clipLength;
+
+    System.out.println("\n\n\n\n\n");
+    System.out.println(clipStart);
+    System.out.println(clipEnd);
+    System.out.println("\n\n\n\n\n");
+
+    uploadFileWithClip(spotUrl, clipStart, clipEnd, spot + 50, properties);
+
+  }
+
+  public void addStaticContent(String videoUrl, Double length)
+      throws JsonProcessingException {
+
+    //TODO add spotlight negative here
+
     // Here i add the background clip that in the future will hold all the static animations.
+
     uploadFileWithClip(videoUrl, 0.0, length, 1, null);
 
   }
@@ -211,7 +321,7 @@ public class ClipHandler {
 
   private Double calculatePercent(Double height, Double resolution) {
 
-    return height / resolution;
+    return (height / resolution) * SCALE_FACTOR;
   }
 
   private Double getTime(List<Double> list) {

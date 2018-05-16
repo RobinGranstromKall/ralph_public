@@ -1,4 +1,4 @@
-package se.homii.model;
+package se.homii.image.model;
 
 
 import lombok.Builder;

@@ -26,19 +26,19 @@ import java.util.List;
 public class RalphImpl implements Ralph {
 
   @Inject
-  SocialMediaService socialMediaService;
+  private SocialMediaService socialMediaService;
 
   @Inject
-  TranslateService translateService;
+  private TranslateService translateService;
 
   @Inject
-  TextToSpeechService textToSpeechService;
+  private TextToSpeechService textToSpeechService;
 
   @Inject
-  ImageCreator imageCreator;
+  private ImageCreator imageCreator;
 
   @Inject
-  VideoEditService videoEditService;
+  private VideoEditService videoEditService;
 
   @Override
   public RenderResult generateTest(String userId, String accessToken)
@@ -50,17 +50,13 @@ public class RalphImpl implements Ralph {
     List<se.homii.api.data.Post> posts = new ArrayList<>();
 
     for (Post post : feedWithTopThreeFriends.getPosts()) {
-
       List<se.homii.api.data.Comment> comments = new ArrayList<>();
-
       for (Comment comment : post.getComments()) {
-
         se.homii.api.data.Comment commentAsset = getComment(comment, userId);
-
         comments.add(commentAsset);
       }
-      se.homii.api.data.Post postAsset = getPost(post, comments, userId);
 
+      se.homii.api.data.Post postAsset = getPost(post, comments, userId);
       posts.add(postAsset);
     }
 
@@ -91,8 +87,6 @@ public class RalphImpl implements Ralph {
 
     Image image = imageCreator.renderFrom(assembledPost, userId);
 
-    //TODO publish post image
-
     return se.homii.api.data.Post.builder()
         .image(se.homii.api.data.Image.builder()
             .fileUrl(image.getFilePath())
@@ -122,8 +116,6 @@ public class RalphImpl implements Ralph {
         .build();
 
     Image commentImage = imageCreator.renderFrom(assembledComment, userId);
-
-    //TODO publish comment image
 
     return se.homii.api.data.Comment.builder()
         .image(se.homii.api.data.Image.builder()

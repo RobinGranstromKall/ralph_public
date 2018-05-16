@@ -17,13 +17,13 @@ public class WebhookResource {
 
     if(exportResponse.status.equals("completed")) {
       System.out.println(
-          "Render of http://52.50.10.43/exports/" + exportResponse.id + " is completed");
+          "Render of http://54.229.229.33/exports/" + exportResponse.id + " is completed");
     } if (exportResponse.status.equals("failed")) {
       System.out.println(
-          "Render of http://52.50.10.43/exports/" + exportResponse.id + " failed");
+          "Render of http://54.229.229.33/exports/" + exportResponse.id + " failed");
     } else {
       System.out.println(
-          exportResponse.status + " http://52.50.10.43/exports/" + exportResponse.id);
+          exportResponse.status + " http://54.229.229.33/exports/" + exportResponse.id);
     }
   }
 }

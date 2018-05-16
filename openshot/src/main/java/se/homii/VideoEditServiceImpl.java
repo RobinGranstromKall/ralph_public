@@ -15,10 +15,10 @@ import java.util.List;
 public class VideoEditServiceImpl implements VideoEditService {
 
   @Inject
-  ClipHandler clipHandler;
+  private ClipHandler clipHandler;
 
   @Inject
-  ProjectHandler projectHandler;
+  private ProjectHandler projectHandler;
 
   public VideoEditServiceImpl() {
 
@@ -33,7 +33,7 @@ public class VideoEditServiceImpl implements VideoEditService {
     projectHandler.initializeProject(asset.getFacebookUserId());
 
     Double clipsLength = clipHandler.addAssetToClips(asset);
-    clipHandler.addBackground("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", clipsLength);
+    clipHandler.addStaticContent("https://i.imgur.com/HgKtCKy.jpg", clipsLength);
 
     projectHandler.initializeProjectExport();
   }

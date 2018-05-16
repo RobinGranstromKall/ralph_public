@@ -1,14 +1,14 @@
-package se.homii;
+package se.homii.image;
 
 import com.github.jknack.handlebars.Handlebars;
 import com.github.jknack.handlebars.Template;
-import se.homii.api.ImageCreator;
 import se.homii.api.S3Service;
-import se.homii.api.models.Asset;
-import se.homii.api.models.CommentAsset;
-import se.homii.api.models.PostAsset;
-import se.homii.model.Image;
-import se.homii.model.ImageDimensions;
+import se.homii.image.api.ImageCreator;
+import se.homii.image.api.models.Asset;
+import se.homii.image.api.models.CommentAsset;
+import se.homii.image.api.models.PostAsset;
+import se.homii.image.model.Image;
+import se.homii.image.model.ImageDimensions;
 
 import javax.imageio.ImageIO;
 import javax.inject.Inject;
@@ -41,6 +41,7 @@ public class ImageCreatorImpl implements ImageCreator {
 
   /**
    * Creates an image file and uploads is to S3.
+   *
    * @param asset
    * @param userId
    * @return Image object with the image dimensions and URL to S3.
@@ -69,6 +70,7 @@ public class ImageCreatorImpl implements ImageCreator {
   /**
    * Applies the asset to the template, to get an html string.
    * It then saves the string to a file.
+   *
    * @param asset
    * @return Html file
    * @throws IOException
@@ -102,6 +104,7 @@ public class ImageCreatorImpl implements ImageCreator {
 
   /**
    * Runs a CLI to render an image from an html file.
+   *
    * @param file Html file to be rendered.
    * @return Rendered image file.
    */
@@ -131,6 +134,7 @@ public class ImageCreatorImpl implements ImageCreator {
 
   /**
    * An algorithm to remove all transparent pixels.
+   *
    * @param image
    * @return A BufferedImage object to be written to a file.
    */
@@ -191,6 +195,7 @@ public class ImageCreatorImpl implements ImageCreator {
 
   /**
    * Calculates the image dimensions.
+   *
    * @param file
    * @return The width and height of the image
    */

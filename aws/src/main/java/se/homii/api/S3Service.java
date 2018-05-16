@@ -6,5 +6,4 @@ public interface S3Service {
 
   String uploadFileForUser(String userId, File file);
   void deleteFilesForUser(String userId);
-
 }

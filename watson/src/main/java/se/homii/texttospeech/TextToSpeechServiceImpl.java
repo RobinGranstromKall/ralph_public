@@ -1,11 +1,12 @@
-package se.homii;
+package se.homii.texttospeech;
 
 import com.ibm.watson.developer_cloud.text_to_speech.v1.TextToSpeech;
 import com.ibm.watson.developer_cloud.text_to_speech.v1.model.SynthesizeOptions;
 import com.ibm.watson.developer_cloud.text_to_speech.v1.util.WaveUtils;
 import org.apache.commons.io.FileUtils;
 import se.homii.api.S3Service;
-import se.homii.model.Audio;
+import se.homii.texttospeech.api.TextToSpeechService;
+import se.homii.texttospeech.api.model.Audio;
 
 import javax.inject.Inject;
 import javax.sound.sampled.AudioFormat;
@@ -27,13 +28,14 @@ public class TextToSpeechServiceImpl implements TextToSpeechService {
 
     this.s3Service = s3Service;
     this.textToSpeechService = new TextToSpeech(
-        "Username",
-        "Password");
+        "USERNAME",
+        "PASSWORD");
   }
 
   /**
    * Creates an input stream from IBM Watson to be saved to a file and uploaded to S3.
-   * @param text to translate to audio.
+   *
+   * @param text   to translate to audio.
    * @param userId to use as directory name in S3.
    * @return Audio object with the URL to S3 and the duration of the audio file in seconds.
    * @throws IOException
@@ -97,6 +99,7 @@ public class TextToSpeechServiceImpl implements TextToSpeechService {
 
     String openingTag = "<voice-transformation type=\"Custom\" rate=\"100%\">";
     String closingTag = "</voice-transformation>";
+
 
     return openingTag + text + closingTag;
   }

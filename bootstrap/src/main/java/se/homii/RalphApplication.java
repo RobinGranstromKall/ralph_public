@@ -43,11 +43,17 @@ public class RalphApplication extends Application<BootstrapConfiguration> {
 
     try {
       ralph.generateTest(
-          "userId",
-          "accessToken");
+          "10202404586340829",
+          "EAACEdEose0cBAL6To1LNyzQWNwCoEzaT944LK9blyTPZBh8coRcO4ltmbm1bDHjSBk5utXlejpkNxGaZBhxOiUaa2bfPzK2X73EuBBKRCyIcVOd45EWtJFysTut0TAZAwqgWYnyNneA44nxScnSrPamGeXQJ1NALvfknxUZBlTdMSLZAUtr6WhzqzZCuaOVTwZD");
     } catch (TextToSpeechException | IOException e) {
       e.printStackTrace();
     }
+
+  //  SocialMediaService socialMediaService = injector.getInstance(
+  //      SocialMediaService.class);
+  //  socialMediaService.getFeedWithTopThreeFriends(
+  //      "10204762531800355",
+  //      "EAACEdEose0cBALAAikq1g1M08PliHlLaz44k6TJ5mTpd6oO9ZC5U3T22BpCSIA8GGECzx6cM34aB7I7NJbrPvmL3GHH1XnmQVKSXDsnOojZAaDRSj3GHC99ose3It66aySBzmzaOCsJ3dLEDcXMU6xx0G4Y7ZB62nlSoMRa9exgKfs9EY1uzMZAxkiYuiVlKCg9W0rKcTwZDZD");
   }
 
   private Module[] instantiateGuiceModules() {

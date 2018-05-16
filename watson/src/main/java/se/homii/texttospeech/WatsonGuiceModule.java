@@ -1,6 +1,7 @@
-package se.homii;
+package se.homii.texttospeech;
 
 import com.google.inject.AbstractModule;
+import se.homii.texttospeech.api.TextToSpeechService;
 
 public class WatsonGuiceModule extends AbstractModule {
 

@@ -1,7 +1,9 @@
-package se.homii.api.models;
+package se.homii.image.api.models;
 
 import lombok.Builder;
 import lombok.Data;
+
+import java.time.OffsetDateTime;
 
 @Data
 @Builder

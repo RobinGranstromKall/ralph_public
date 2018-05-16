@@ -1,4 +1,4 @@
-package se.homii.model;
+package se.homii.texttospeech.api.model;
 
 import lombok.Builder;
 import lombok.Data;

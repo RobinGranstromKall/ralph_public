@@ -1,7 +1,7 @@
-package se.homii;
+package se.homii.image;
 
 import com.google.inject.AbstractModule;
-import se.homii.api.ImageCreator;
+import se.homii.image.api.ImageCreator;
 
 public class ImageGuiceModule extends AbstractModule {
 
