@@ -18,8 +18,8 @@ import java.util.List;
 @Singleton
 public class S3ServiceImpl implements S3Service {
 
-  private final String accessKey = "AKIAJVFFZFKDWSTCKJTA";
-  private final String secretAccessKey = "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";
+  private final String accessKey = "ACCESSKEY";
+  private final String secretAccessKey = "SecretAccessKey";
   private final String BUCKET_NAME = "homii-ralph";
   private final String REGION = "eu-west-1";
 
